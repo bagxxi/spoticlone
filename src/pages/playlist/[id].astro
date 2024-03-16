@@ -2,7 +2,7 @@
 import Layout from "../../layouts/Layout.astro";
 import MusicsTable from "@/components/MusicsTable.astro";
 import { CardPlayButton } from "@/components/CardPlayButton";
-import { allPlaylists, songs } from "@/lib/data";
+import { allPlaylists, songs, type Song } from "@/lib";
 
 const { id } = Astro.params;
 
@@ -10,7 +10,7 @@ const playlist = allPlaylists.find((playlist) => playlist.id === id);
 const playListSongs = songs.filter(
   (song) => song.albumId === playlist?.albumId
 );
-function calcularDuracionPlaylist(songs, albumId) {
+function calcularDuracionPlaylist(songs: Song[], albumId: number) {
   let totalMinutos = 0;
   let totalSegundos = 0;
 
@@ -34,7 +34,7 @@ function calcularDuracionPlaylist(songs, albumId) {
   };
 }
 
-const duracionPlaylist = calcularDuracionPlaylist(songs, playlist?.albumId);
+const duracionPlaylist = calcularDuracionPlaylist(songs, playlist?.albumId!);
 ---
 <Layout title="Spotify Chile Clon">
   <div
