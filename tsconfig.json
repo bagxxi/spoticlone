@@ -1,22 +1,8 @@
 {
   "compilerOptions": {
-    "baseUrl": "C:/Users/gabri/spotify-clone-astro",
+    "baseUrl": ".",
     "paths": {
-      "@/*": [
-        "./src/*"
-      ],
-      "@/components/*": [
-        "src/components/*"
-      ],
-      "@/icons": [
-        "src/icons/*"
-      ],
-      "@/lib": [
-        "src/lib/*"
-      ],
-      "@/store": [
-        "src/store/*"
-      ]
+      "@/*": ["src/*"]
     },
     "jsx": "react-jsx",
     "jsxImportSource": "react"
